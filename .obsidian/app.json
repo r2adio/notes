@@ -2,5 +2,13 @@
   "focusNewTab": false,
   "defaultViewMode": "source",
   "tabSize": 2,
-  "vimMode": true
+  "vimMode": true,
+  "pdfExportSettings": {
+    "includeName": false,
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 95
+  },
+  "promptDelete": false
 }
