@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 void minmax() {
   int first = 1;
   int val, minval, maxval;
