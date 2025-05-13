@@ -29,9 +29,11 @@ int main() {
 
   // READ FILE
   char statement[1000];
-  FILE *hand;
-  hand = fopen("test.md", "r");
+  FILE *hand; // FILE: a type, *hand: a pointer to a FILE object
+  hand = fopen("00c-intro/test.txt", "r");
+  printf("The content of file test.txt is:\n");
   while (fgets(statement, 1000, hand) != NULL) {
     printf("%s", statement);
+    // fgets() returns NULL, constant defined in stdio.h, if reaches EOF
   }
 }
