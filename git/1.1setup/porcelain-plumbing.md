@@ -14,5 +14,3 @@
   1. git apply
   2. git commit-tree
   3. git hash-object
-
-<!-- NOTE: dfjdkjkhabsd-->
