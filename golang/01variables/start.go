@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func start() {
 	//std out on console
 	fmt.Println("startin go journey!")
 
@@ -19,4 +19,14 @@ func main() {
 	fmt.Println(message, futureExpLevel, expLevel)
 	fmt.Printf("value of pi= %.3f\n", pi)
 	fmt.Printf("status: %t\n", isGoat)
+
+	// go allows declaring multiple variables in a single line
+	// mileage, company := 3434, "Toyota"
+
+	// golang memory footprint
+	// Go runtime: small amount of extra code that's included in the executable binary
+
+	// constants in golang
+	// constants cant use short declaration syntax
+	const Pi = 3.145
 }
