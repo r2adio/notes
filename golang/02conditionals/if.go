@@ -11,6 +11,8 @@ func if_else() {
 		fmt.Println("you are super tall")
 	} else if height > 4 {
 		fmt.Println("you are tall enough")
+	} else if height == 5 {
+		fmt.Println("you've a perfect height")
 	} else {
 		fmt.Println("you are not tall enough")
 	}
