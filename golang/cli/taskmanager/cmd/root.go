@@ -3,6 +3,8 @@ package cmd
 import (
 	"os"
 
+	"github.com/fatih/color"
+	"github.com/olekukonko/tablewriter"
 	"github.com/spf13/cobra"
 )
 
@@ -10,11 +12,20 @@ import (
 var rootCmd = &cobra.Command{
 	Use:   "taskmanager",
 	Short: "Task Manager CLI Application",
-	Long: `Task Manager is a simple CLI tool to
-	manage your tasks, supporting add, list, mark done, and delete operations.`,
+	Long: `Task Manager is a simple CLI tool tomanage your tasks,
+supporting add, list, mark done, and delete operations.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
+	Run: func(cmd *cobra.Command, args []string) {
+		color.Red("red color")
+		color.Green("retro terminal")
+		data := [][]string{
+			[]string{"1.", "ABC", "abc"},
+			[]string{"2.", "QWE", "qwe"},
+			[]string{"3.", "TYU", "tyu"},
+		}
+		table := tablewriter.NewWriter(os.Stdout)
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
