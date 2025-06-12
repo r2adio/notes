@@ -5,6 +5,13 @@ import (
 	"fmt"
 )
 
+type rect struct {
+	width  int
+	height int
+}
+
+func (r *rect) area() int { return r.width * r.height }
+
 func main() {
 	// definition of structs in go
 	type wheel struct {
@@ -55,4 +62,16 @@ func main() {
 	// instead of lanesTRUCK.CAR.make
 	fmt.Println(lanesTRUCK.make)
 	fmt.Println(lanesTRUCK.model)
+
+	// struct meathods
+	// meathod declaration must be at package level, func (r *rect) area() int{}
+	// type rect struct {
+	// 	width int
+	// 	height int
+	// }
+	// func (r *rect) area() int{
+	// 	return r.width* r.height;
+	// }
+	r := rect{width: 5, height: 10}
+	fmt.Println(r.area())
 }
