@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/fatih/color"
@@ -25,6 +26,8 @@ supporting add, list, mark done, and delete operations.`,
 			[]string{"3.", "TYU", "tyu"},
 		}
 		table := tablewriter.NewWriter(os.Stdout)
+		fmt.Println(table)
+		fmt.Println(data)
 	},
 }
 
