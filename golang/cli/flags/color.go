@@ -22,8 +22,12 @@ func colorize(color Color, message string) {
 	fmt.Println(string(color), message, string(ColorReset))
 }
 
-func main() {
-	useColor := flag.Bool("color", false, "display colorized output")
+func MAIN() {
+	// flag.Bool() define a boolean flag, called color
+	// false, set the default value for this flag, when it's not provided
+	// last parameter, can be printed as a usage message
+	useColor := flag.Bool("color", false, "display colorized output") // function returns a pointer to a bool
+	// use the pointer to set the `bool` based on the flags passed in by user
 	flag.Parse()
 
 	if *useColor {
