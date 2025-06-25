@@ -40,4 +40,7 @@ func init() {
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
 	// timezoneCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
+
+	timezoneCmd.PersistentFlags().String("date", "", "returns the date and time in a specified format") // Persistent Flags
+	timezoneCmd.LocalFlags().String("date", "", "Date for which to get the time (format: yyyy-mm-dd)")  // Local Flags
 }
