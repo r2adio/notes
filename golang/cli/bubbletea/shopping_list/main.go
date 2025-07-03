@@ -15,7 +15,14 @@ type model struct {
 
 // defining our applications initial state
 func initialModel() model {
-	return model{choices: []string{"Buy cough syrup", "dhdlkjh"},
+	return model{
+		choices: []string{
+			"Buy cough syrup",
+			"Buy stationary",
+			"Buy groceries",
+		},
+
+		// map that indicates which choices are selected
 		selected: make(map[int]struct{}),
 	}
 }
@@ -43,8 +50,10 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 			_, ok := m.selected[m.cursor]
 			if ok {
 				delete(m.selected, m.cursor)
+				m.cursor--
 			} else {
 				m.selected[m.cursor] = struct{}{}
+				m.cursor++
 			}
 		}
 	}
