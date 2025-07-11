@@ -31,7 +31,7 @@ func Index(todos []models.Todo) templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><title>To-Do App</title><script src=\"https://unpkg.com/htmx.org@2.0.0/dist/htmx.min.js\"></script></head><body><h1>todo list</h1><form hx-post=\"/todos\" hx-target=\"#todos\" hx-swap=\"innerHTML\"><input type=\"text\" name=\"title\" placeholder=\"New Task\" required> <button type=\"submit\">Add</button></form><ul id=\"todo-list\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<html><head><title>To-Do App</title><script src=\"https://unpkg.com/htmx.org@2.0.0/dist/htmx.min.js\"></script><link href=\"./static/css/output.css\" rel=\"stylesheet\"></head><body class=\"bg-black\"><h1 class=\"text-3xl\">todo list</h1><form hx-post=\"/todos\" hx-target=\"#todos\" hx-swap=\"innerHTML\"><input type=\"text\" name=\"title\" placeholder=\"New Task\" required> <button type=\"submit\">Add</button></form><ul id=\"todo-list\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -43,7 +43,7 @@ func Index(todos []models.Todo) templ.Component {
 			var templ_7745c5c3_Var2 string
 			templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(todo.Title)
 			if templ_7745c5c3_Err != nil {
-				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/index.templ`, Line: 19, Col: 21}
+				return templ.Error{Err: templ_7745c5c3_Err, FileName: `views/index.templ`, Line: 22, Col: 20}
 			}
 			_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 			if templ_7745c5c3_Err != nil {
