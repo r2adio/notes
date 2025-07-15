@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+//var gender = "sir"
+
+//templ component
+templ page() {
+@greetTemplate("alksdjhf", "ma'am")
+<p data-testid={ testID(true) }>
+  testalksdjhf
+</p>
+}
+
+//templ component
+templ greetTemplate(tod, gender string) {
+<header data-testid="greet">
+  good { tod } { gender }!
+</header>
+<button class="button">{ gender }</button>
+}
+
+func testID(isTrue bool) (string, error) {
+if isTrue {
+return "returns the value as isTrue", nil
+}
+// if returns error, `templ: failed to render template`
+return "", fmt.Errorf("isTrue is false")
+}
