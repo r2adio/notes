@@ -21,14 +21,18 @@ func (s *Server) RegisterRoutes() http.Handler {
 	}))
 
 	e.GET("/", s.HelloWorldHandler)
+	e.GET("/", s.getUser)
 
 	return e
 }
-
 func (s *Server) HelloWorldHandler(c echo.Context) error {
 	resp := map[string]string{
 		"message": "Hello World",
 	}
 
 	return c.JSON(http.StatusOK, resp)
+}
+func (s *Server) getUser(c echo.Context) error {
+	id := c.Param("id")
+	return c.String(http.StatusOK, id)
 }
