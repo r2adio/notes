@@ -1,0 +1,6 @@
+debug 2025/07/19 15:48:07 could not open a new TTY: open /dev/tty: device not configured
+debug 2025/07/19 16:56:52 program was killed: program experienced a panic
+debug 2025/07/19 16:57:32 program was killed: program experienced a panic
+debug 2025/07/19 19:53:08 question: what is your name?, answer: asdlkjfh
+debug 2025/07/19 19:53:10 question: what is you favourite editor?, answer: asdsf
+debug 2025/07/19 19:53:11 question: what is your favourite quote?, answer: ljkhljk
