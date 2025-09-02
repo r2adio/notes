@@ -1,4 +1,4 @@
-module rainbow
+module counter
 
 go 1.24.5
 

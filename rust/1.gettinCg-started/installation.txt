@@ -1,4 +1,0 @@
-using rustup:
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  rustup metadata and toolchain will be installed into /Users/gaurav/.rustup
-  cargohome directory: /Users/gaurav/.cargo
