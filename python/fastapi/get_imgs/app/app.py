@@ -1,5 +1,7 @@
 from fastapi import FastAPI, HTTPException
 
+from app.schemas import PostCreate, PostResponse
+
 app = FastAPI()
 
 
@@ -24,7 +26,30 @@ def read_posts(limit: int = None):  # add query param
 
 
 @app.get("/posts/{post_id}")
-def read_post(post_id: int):  # add path param
+def read_post(post_id: int) -> PostResponse:  # add path param
     if post_id not in posts:
         raise HTTPException(status_code=404, detail="Post not found")
     return posts.get(post_id)
+
+
+@app.post("/posts")
+def create_post(post: PostCreate) -> PostResponse:  # request body
+    # to accept the request body data, need a schema in fastapi
+    new_post = {"title": post.title, "body": post.body}
+    posts[max(posts.keys()) + 1] = new_post
+    return new_post
+
+
+@app.put("/posts/{post_id}")
+def update_post(post_id: int, post: PostCreate) -> PostResponse:  # add path param
+    if post_id not in posts:
+        raise HTTPException(status_code=404, detail="Post not found")
+    posts[post_id] = post
+
+
+@app.delete("/posts/{post_id}")
+def delete_post(post_id: int):  # add path param
+    if post_id not in posts:
+        raise HTTPException(status_code=404, detail="Post not found")
+    del posts[post_id]
+    return {"message": f"Post {post_id} deleted"}
