@@ -1,8 +1,20 @@
-from fastapi import FastAPI, HTTPException
+from contextlib import asynccontextmanager
 
+from fastapi import FastAPI, HTTPException
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from app.db import Post, create_db, get_async_session
 from app.schemas import PostCreate, PostResponse
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await create_db()
+    yield
+
+
+# create the FastAPI app, and add the lifespan context manager
+app = FastAPI(lifespan=lifespan)
 
 
 posts = {
