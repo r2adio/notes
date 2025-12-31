@@ -6,8 +6,6 @@ from contextlib import asynccontextmanager
 
 from click.types import convert_type
 from fastapi import Depends, FastAPI, File, Form, HTTPException, UploadFile
-
-# from imagekitio.models.UploadFileRequestOptions import UploadFileRequestOptions
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
