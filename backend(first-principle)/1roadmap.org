@@ -3,14 +3,37 @@
 * high level understanding
 
 * http protocol
+  - establishing connection via http
+  - http headers, its role and types
+  - diff between simple and pre-flight request
+  - http caching techniques
+  - http/1.1 vs http/2.0 vs http/3.0
+  - content neogtiation b/w client and server using diff headers
+  - http persistent connections, and http compression techniques
+  - security: SSL, TLS, HTTPS
 
 * routing
+  - types: static, dynamic, nested, hierarchical, catchall, wildcard, regex based routes
+  - api versioning, best way to depricate a route
+  - route grouping, and how it helps with versioning, permissions, shared middleware
+  - securing routes, and optimize route matching performance
 
 * serialization and deserialization
+  - its need, and how it helps with interoperability standard
+  - which format to choose: text (json/xml) vs binary (protobuf)
 
 * authentication and authorization
+  - types: statefull, stateless authentication
+  - deep dive: oAuth protocol, OpenID Connect
+  - best practices in security
+  - audit logging: recording authentication authorization events for audits
+  - monitoring failed attempts, and privilege escalation and access to sensitive resources
+  - avoiding timing attacks
 
 * validation and transformation
+  - types: syntactic, semantic, type validation
+  - need of client-side and server-side validation
+  - transformation -> type-casting, date formats, normalization, sanitization
 
 * middlewares
   - what and when to use middlewares
@@ -54,7 +77,7 @@
 
 * caching
   - need of caching, and how it differs from db persistence
-  - types of caching: in-memory, browser, db caching
+  - types: in-memory, browser, db caching
   - diff caching strategies: cash aside, right through, right behind, right back, read through
   - diff cache eviction strategies: LRU, LFU, TTL, FIFO
   - need of caching invalidation: manual, time-to-live, event bash invalidation
