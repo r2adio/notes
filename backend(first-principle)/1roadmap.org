@@ -1,0 +1,79 @@
+#+title: Backend from first priciples
+
+* high level understanding
+
+* http protocol
+
+* routing
+
+* serialization and deserialization
+
+* authentication and authorization
+
+* validation and transformation
+
+* middlewares
+  - what and when to use middlewares
+  - role of middleware in req cycle: pre-request and post-response
+  - flow of middleware, and its order
+  - middleware short-circuit req pipeline, by handling 404 errors
+  - performance and scalability aspect of middlewares
+
+* request context
+  - meta data passed through application middlewares, controllers, services
+  - its a request coped state, state is valid for that req.
+  - tracking and logging info like req IDs, trace IDs
+  - request specific data, custom data injected during req lifecycle (caching data, permission checks)
+
+* handlers and controllers
+  - the MVC pattern
+
+* crud deep dive
+  - crud operations mapping to http methods, and common api's
+
+* best practices of rest
+  - principle of designing api's around resources, and sticking to http semantics
+  - best practices for filtering and pagination
+  - design api's with openAPI specs
+  - content neogtiation, capturing exceptions and providing meaningful msg
+
+* databases
+  - diff b/w relational and non-relational db
+  - theoretical concepts: acid and cap theorem
+  - best practices for db design: schema design and indexing
+  - optimization methods: query optimization, caching, connection pooling
+  - data integrity: constraints and validation, transactions and concurrency
+  - how orm's work and when to use one, and its tradeoffs
+
+* business logic layer (BLL)
+  - design priciples like separation of concerns, single responsibility, open-close dep inversion
+  - components of BLL: services, domain models (represents core entities)
+  - business tools and business validation logic
+  - best practices for designing service layer
+  - propogating errors from service layer to presentation layer
+
+* caching
+  - need of caching, and how it differs from db persistence
+  - types of caching: in-memory, browser, db caching
+  - diff caching strategies: cash aside, right through, right behind, right back, read through
+  - diff cache eviction strategies: LRU, LFU, TTL, FIFO
+  - need of caching invalidation: manual, time-to-live, event bash invalidation
+  - levels of caching: L1 -> in-memory, L2 -> network distributed, Hierarchical caching -> L1+L2
+
+* transactional emails
+* task queuing and scheduling
+* elastic search
+* error handling
+* config management
+* logging, monitoring, and observability
+* graceful shutdown
+* security
+* scaling and performance
+* concurrency and parallelism
+* object storage and large files
+* real-time backend systems
+* testing and code quality
+* 12 factor app
+* openAPI standards
+* webhooks
+* devops for backend engineers
