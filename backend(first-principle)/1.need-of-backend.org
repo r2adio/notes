@@ -1,0 +1,8 @@
+#+title: what is backend, why and how do they work?
+
+* backend
+  - machine listening for http, websocket, gRPC, or any kind of req via an open port
+
+* working of backend
+  *flow of request from browser to server:*
+  => browser (starting point) -> DNS -> AWS server (+firewall) -> AWS instance -> Nginix -> Localhost (final server)
