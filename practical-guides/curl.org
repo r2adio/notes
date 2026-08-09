@@ -1,0 +1,33 @@
+#+title: practical guide of curl
+
+* note:
+  - url defaults to http (!https), if protocol not specified.
+
+* common use-cases:
+  - curl <url> => get website's content
+  - curl -I <url> => header info
+  - curl -i <url> => content + header info
+  - curl -Iv <url> => verbose output of website headers
+  - curl -IL <url> => follows site's url redirect, eg. http -> https
+  - curl -o <file> <url> => output content to a file (custom file name)
+  - curl -O <url> => output content to a file (path info specified in url)
+  - curl -k <url> => skips verification if certificates aren't setup correctly
+
+* curl for api:
+  - curl <url> => returns compressed json
+  - ../api/v1/items/[1-5] => supports range
+  - curl -d "<data>" <url> => post endpoint and expects url form data by default
+  - curl -d "<data>" -H "Content-Type: <type>" <url> => using diff content type, eg: json
+  - curl -X <method> <url> => using specified http method, diff from defaults
+
+* header and host manipulation:
+  - curl --header "Host: example.com" http://127.0.0.1/
+  - curl --resolve navek.org:443:127.0.0.1 https://navek.org
+  - curl --connect-to example.com:443:host-47.example.com:443 https://example.com/
+
+* curl with other protocols:
+  - eg: ldap, mqtt, websockets, ftp, telnet
+  - curl telnet://localhost:4317
+  - curl dict://dict.org/d:dog
+  - curl smtp://mail.example.com --mail-from myself@example.com --mail-rcpt \
+    receiver@example.com --upload-file  email.txt
